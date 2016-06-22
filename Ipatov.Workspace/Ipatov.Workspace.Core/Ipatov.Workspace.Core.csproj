@@ -41,6 +41,8 @@
     <Compile Include="Common\UniqueString.cs" />
     <Compile Include="Common\UniqueStringCollection.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="ServiceHelpers\GlobalServices.cs" />
+    <Compile Include="ServiceHelpers\IGlobalServices.cs" />
     <Compile Include="Structure\IWorkspaceNode.cs" />
     <Compile Include="Structure\IWorkspaceNodeCollection.cs" />
     <Compile Include="Structure\IWorkspaceNodeGroup.cs" />

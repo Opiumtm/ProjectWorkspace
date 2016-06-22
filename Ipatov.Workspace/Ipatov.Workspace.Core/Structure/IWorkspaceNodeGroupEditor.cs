@@ -1,4 +1,6 @@
-﻿namespace Ipatov.Workspace
+﻿using System;
+
+namespace Ipatov.Workspace
 {
     /// <summary>
     /// Node group editor.
@@ -18,6 +20,14 @@
         /// <param name="node">Node.</param>
         /// <param name="id">Identifier.</param>
         void Add(IWorkspaceNode node, TId id);
+
+
+        /// <summary>
+        /// Add child node or get existing.
+        /// </summary>
+        /// <param name="node">Node.</param>
+        /// <param name="id">Identifier.</param>
+        IWorkspaceNode AddOrGet(Func<IWorkspaceNode> node, TId id);
 
         /// <summary>
         /// Remove child node.

@@ -1,4 +1,5 @@
-﻿using System.Collections.Concurrent;
+﻿using System;
+using System.Collections.Concurrent;
 using System.Collections.Generic;
 
 namespace Ipatov.Workspace
@@ -71,6 +72,16 @@ namespace Ipatov.Workspace
                 return;
             }
             _nodes.AddOrUpdate(id, node, (id1, workspaceNode) => node);
+        }
+
+        /// <summary>
+        /// Add child node or get existing.
+        /// </summary>
+        /// <param name="node">Node.</param>
+        /// <param name="id">Identifier.</param>
+        public IWorkspaceNode AddOrGet(Func<IWorkspaceNode> node, TId id)
+        {
+            return _nodes.GetOrAdd(id, id1 => node());
         }
 
         /// <summary>

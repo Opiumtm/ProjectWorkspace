@@ -25,5 +25,26 @@ namespace Ipatov.Workspace
         public RootWorkspace() : base(null, StringComparer.OrdinalIgnoreCase)
         {
         }
+
+        /// <summary>
+        /// Make sure global node is present.
+        /// </summary>
+        /// <param name="node">Factory func.</param>
+        /// <param name="id">Node id.</param>
+        /// <returns>Node.</returns>
+        public static IWorkspaceNode EnsureNode(Func<IWorkspaceNode> node, string id)
+        {
+            return Current.As<IWorkspaceNodeGroupEditor<string>>().AddOrGet(node, id);
+        }
+
+        /// <summary>
+        /// Make sure global node is present.
+        /// </summary>
+        /// <param name="id">Node id.</param>
+        /// <returns>Node.</returns>
+        public static IWorkspaceNode EnsureNode<T>(string id) where T : IWorkspaceNode, new()
+        {
+            return Current.As<IWorkspaceNodeGroupEditor<string>>().AddOrGet(() => new T(), id);
+        }
     }
 }
