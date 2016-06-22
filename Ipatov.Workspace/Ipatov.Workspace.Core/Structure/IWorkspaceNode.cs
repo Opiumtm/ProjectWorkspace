@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace Ipatov.Workspace
+﻿namespace Ipatov.Workspace
 {
     /// <summary>
     /// Workspace hierarchy node.

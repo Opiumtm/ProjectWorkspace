@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Ipatov.Workspace
+﻿namespace Ipatov.Workspace
 {
     /// <summary>
     /// Simple workspace node base class.
